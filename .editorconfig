@@ -1,0 +1,37 @@
+﻿[*.cs]
+
+# CA1305: 指定 IFormatProvider
+dotnet_diagnostic.CA1305.severity = none
+
+# CA1303: 请不要将文本作为本地化参数传递
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1060: 将 pinvoke 移到本机方法类
+dotnet_diagnostic.CA1060.severity = none
+
+# CA1707: 标识符不应包含下划线
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1815: 重写值类型上的 Equals 和相等运算符
+dotnet_diagnostic.CA1815.severity = none
+
+# CA1051: 不要声明可见实例字段
+dotnet_diagnostic.CA1051.severity = none
+
+# CA2101: 指定对 P/Invoke 字符串参数进行封送处理
+dotnet_diagnostic.CA2101.severity = none
+
+# CA1031: 不捕获常规异常类型
+dotnet_diagnostic.CA1031.severity = none
+
+# CA1307: 指定 StringComparison
+dotnet_diagnostic.CA1307.severity = none
+
+# CA1062: 验证公共方法的参数
+dotnet_diagnostic.CA1062.severity = none
+
+# CA2000: 丢失范围之前释放对象
+dotnet_diagnostic.CA2000.severity = none
+
+# CA1304: 指定 CultureInfo
+dotnet_diagnostic.CA1304.severity = none

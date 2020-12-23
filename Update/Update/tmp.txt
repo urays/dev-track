@@ -1,0 +1,4 @@
+
+# 此文件请不要删除
+
+# for /R %G in (*.c *.h *.md *.xml *.txt *.bat *.cs *.lic) do unix2dos "%G"

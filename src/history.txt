@@ -1,0 +1,45 @@
+﻿
+Version 1.0.4.3 (07.08.2020) CTRB:urays
+            *update swcode; https://github.com/urays/swcode
+
+Version 1.0.4.1 (15.07.2020) CTRB:urays
+            *[fix]the Toolbar flickers when the form to be maximized
+            *[fix]PickBoxs display error at some points
+            +support for draging the file to ST-Reader
+            +control the display by the way of pressing space key
+            +add NotifyBoxs to notify messages
+            *update the UI
+
+Version 1.0.4.0 (13.07.2020) CTRB:urays
+            +Support for Auto Update
+
+Version 1.0.3.3 (10.07.2020) CTRB:urays
+            *update the UI
+            *[fix]STReader覆盖载入不同格式文件时,显示窗口错误
+            *[mod]modify release structure and relevant scripts
+
+Version 1.0.3.2 (30.01.2020) CTRB:urays
+
+            +add recognition algorithm refresh mechanism
+            +add aboutform
+            +add user experience feedback mechanism 
+            +add scope data accuracy limit
+            +support for BIN reading
+            *[fix]fuzzy display at high resolution
+            *[mod]modify the licence machine-made
+            *[mod]increase the upper limit of interactive data
+            *[mod]optimize scope max/min machine-made
+            *[mod]extend the choise of 'ENGRIDW'
+
+Version 1.0.3.1 (22.01.2020) CTRB:urays
+
+            +speed the rate of swcode paint
+            +build c lanuage analysis dll, march interface between c and c#
+            +support for running recognition algorithm on PC terminal
+            *[fix]loss the first analysis frame
+            *[fix]scope error when data value over the limit
+
+Version 1.0.3.0 (14.01.2020)  CTRB:urays
+
+            +project creation based on v1.0.0.0
+            *[opt]optimize program structure
