@@ -1,6 +1,6 @@
 ﻿namespace CCS.Catcher.Forms
 {
-    partial class SizeForm
+    partial class FormatForm
     {
         /// <summary>
         /// Required designer variable.

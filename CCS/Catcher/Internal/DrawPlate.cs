@@ -3,26 +3,25 @@ using System.Drawing;
 
 namespace CCS.Catcher.Internal
 {
-    public enum PixelShape
-    {
-        Cell = 0, //方形格子
-        Normal,
-    };
-
     public class DataCell
     {
-        public PixelShape DataShape { get; set; } = PixelShape.Normal;
+        //操作数标记
+        public int sign { get; set; } = 0;
 
-        public Color Color { get; set; } = Color.Green;
+        public Color clr { get; set; } = Color.Green;
 
-        //当PixelShape.Normals时有用
-        public float PenWidth { get; set; } = 2.5F;
-
-        public Point Location { get; set; } = new Point(0, 0);
+        public Point loc { get; set; } = new Point(0, 0);
     }
 
     public class DrawPlate
     {
+        /// <summary>
+        /// 当前操作指针
+        /// </summary>
+        public int CurOper { get; set; }
+
+        public Color PenColor { get; set; } = Color.Green;
+
         private readonly Stack<List<DataCell>> _undo = new System.Collections.Generic.Stack<List<DataCell>>();
         private readonly Stack<List<DataCell>> _redo = new System.Collections.Generic.Stack<List<DataCell>>();
 

@@ -116,6 +116,7 @@
     <Compile Include="StartUp\aboutForm.Designer.cs">
       <DependentUpon>aboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update\FeedBack.cs" />
     <Compile Include="Update\UForm.cs">
       <SubType>Form</SubType>
     </Compile>

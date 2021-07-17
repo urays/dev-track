@@ -12,6 +12,6 @@
 
 > 软件许可证 获取
 
-1. 首次运行DevTrack.exe，将在根目录下生成 idkey.pub；向管理员发送idkey.pub以获得<license.lic>(许可证)；<license.lic>放到DevTrack.exe所在根目录即可。
+1. 首次运行DevTrack.exe，将在根目录下生成 idkey.pub；向管理员发送idkey.pub以获得<license.lic>(许可证)；<license.lic>放到DevTrack.exe所在根目录即可。  2930589025@qq.com
 
 2. 许可证过期时，将不能再启动软件，这时你需要重新向管理员申请。

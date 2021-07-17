@@ -12,7 +12,7 @@ namespace CCS
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            pageBox1.RUN(Catcher.Controls.COMMOND.Load);
+            pageBox1.Run(Catcher.Controls.PageBoxCMD.Load);
         }
 
         private void Form1_Load(object sender, System.EventArgs e)

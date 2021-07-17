@@ -10,6 +10,6 @@
 
         //默认的反馈信息目标邮箱
         //"xxx@qq.com;xxx@163.com;xxx@xxx.com" 分号隔开即可
-        public const string ReceiveEmail = "942494956@qq.com";
+        public const string ReceiveEmail = "2930589025@qq.com";
     }
 }

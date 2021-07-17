@@ -94,11 +94,11 @@
     <Compile Include="Catcher\Controls\STScope.Designer.cs">
       <DependentUpon>STScope.cs</DependentUpon>
     </Compile>
-    <Compile Include="Catcher\Forms\SizeForm.cs">
+    <Compile Include="Catcher\Forms\FormatForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Catcher\Forms\SizeForm.Designer.cs">
-      <DependentUpon>SizeForm.cs</DependentUpon>
+    <Compile Include="Catcher\Forms\FormatForm.Designer.cs">
+      <DependentUpon>FormatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Catcher\Internal\Canls.cs" />
     <Compile Include="Catcher\Internal\DataPack.cs" />
@@ -119,8 +119,8 @@
     <EmbeddedResource Include="Catcher\Controls\STScope.resx">
       <DependentUpon>STScope.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Catcher\Forms\SizeForm.resx">
-      <DependentUpon>SizeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Catcher\Forms\FormatForm.resx">
+      <DependentUpon>FormatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

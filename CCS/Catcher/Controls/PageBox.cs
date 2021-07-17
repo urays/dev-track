@@ -4,12 +4,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Security.Permissions;
 using System.Windows.Forms;
 
 namespace CCS.Catcher.Controls
 {
-    public enum COMMOND
+    public enum PageBoxCMD
     {
         //FUNC
         CtlAnls = 0, CtlGrid, CtlPlay, Slide, UsePen, UsePen2, UseLine, Undo, Redo, Capture, Load,
@@ -58,90 +57,6 @@ namespace CCS.Catcher.Controls
 
         private delegate float CalcMoveBarHandler(float w, int curpg, int tolpg);
 
-        private struct MapBox
-        {
-            public int Height;
-            public int Width;
-            public int X;
-            public int Y;
-            public int BorderWidth;
-            public Color BorderColor;
-            public Color BackColor;
-            public bool Selected;
-
-            public Rectangle Area()
-            {
-                return new Rectangle(X, Y, Width, Height);
-            }
-
-            public Rectangle Border()
-            {
-                return new Rectangle(X - BorderWidth, Y - BorderWidth, Width + 2 * BorderWidth, Height + 2 * BorderWidth);
-            }
-        };
-
-        private struct MovBar
-        {
-            public float Height;
-            public float Width;
-            public float X;
-            public float Y;
-            public string Text;
-            public float CurWidth;
-            public Color TextColor;
-            public Color BackColor1;
-            public Color BackColor2;
-            public bool Selected;
-
-            public Rectangle Border()
-            {
-                return new Rectangle((int)X - 1, (int)Y - 1, (int)Width + 2, (int)Height + 2);
-            }
-
-            public RectangleF CurArea()
-            {
-                return new RectangleF(X, Y, CurWidth, Height);
-            }
-
-            public RectangleF NotArea()
-            {
-                return new RectangleF(X + CurWidth, Y, Width - CurWidth, Height);
-            }
-
-            public float TextX(float txtw)
-            {
-                float _x = 0;
-                if (txtw < CurWidth)
-                {
-                    _x = X + CurWidth - txtw;
-                    TextColor = BackColor2;
-                }
-                else
-                {
-                    _x = X + CurWidth + 2;
-                    TextColor = BackColor1;
-                }
-                return _x;
-            }
-        };
-
-        private struct MouseMark
-        {
-            public Rectangle rect;
-            public Point logic;
-            public Color clr1;
-            public Color clr2;
-            public Color clr3;
-            public bool visual;
-            public bool mlock;
-            public Font font;
-
-            public string Text()
-            {
-                return string.Format("[{0}, {1}]", logic.X, logic.Y);
-            }
-        };
-
         #region Fields
 
         private MapBox mapbox;
@@ -151,7 +66,7 @@ namespace CCS.Catcher.Controls
         private readonly double runfps = 1.0f;     //播放帧速 x0.05 ~ x4.0 x1.0
 
         //private bool _
-        private readonly Catcher.Internal.SwcodeFile swcode = new Catcher.Internal.SwcodeFile();
+        private readonly Internal.SwcodeFile swcode = new Internal.SwcodeFile();
 
         #endregion Fields
 
@@ -462,58 +377,58 @@ namespace CCS.Catcher.Controls
             }
         }
 
-        public void RUN(COMMOND cmd)
+        public void Run(PageBoxCMD cmd)
         {
             switch (cmd)
             {
-                case (COMMOND.CtlAnls):
+                case (PageBoxCMD.CtlAnls):
                     //_swcTools.isEnAnls = !_swcTools.isEnAnls;
                     //	Paper.Invalidate();  //重绘控件
                     break;
 
-                case (COMMOND.CtlGrid):
+                case (PageBoxCMD.CtlGrid):
                     //_swcTools.isEnGrid = !_swcTools.isEnGrid;
                     //Paper.Invalidate();
                     BringToFront();
                     break;
 
-                case (COMMOND.CtlPlay):
+                case (PageBoxCMD.CtlPlay):
                     //	_picTools.Mode = Catcher.Utils.aaaaa.MODE.NONE;
                     playtimer.Enabled = !playtimer.Enabled;
                     break;
 
-                case (COMMOND.Slide):
+                case (PageBoxCMD.Slide):
                     playtimer.Enabled = false;
                     //	_picTools.Mode = Catcher.Utils.aaaaa.MODE.NONE;
                     // '' _swcTools.PicPaint(); //清除画笔痕迹
                     break;
 
-                case (COMMOND.UsePen):
+                case (PageBoxCMD.UsePen):
                     playtimer.Enabled = false;
                     //	_picTools.Mode = Catcher.Utils.aaaaa.MODE.DOTS;
                     BringToFront();
                     break;
 
-                case (COMMOND.UsePen2):
+                case (PageBoxCMD.UsePen2):
                     playtimer.Enabled = false;
                     //	_picTools.Mode = Catcher.Utils.aaaaa.MODE.RECTDOT;
                     BringToFront();
                     break;
 
-                case (COMMOND.UseLine):
+                case (PageBoxCMD.UseLine):
                     playtimer.Enabled = false;
                     //_picTools.Mode = Catcher.Utils.aaaaa.MODE.LINES;
                     BringToFront();
                     break;
                 //case (FUNC_COMMOND.Undo): { _picTools.Undo(); break; }
                 //case (FUNC_COMMOND.Redo): { _picTools.Redo(); break; }
-                case (COMMOND.Capture):
+                case (PageBoxCMD.Capture):
                     playtimer.Enabled = false;
                     BringToFront();
                     //SaveImage("crshot/");
                     break;
 
-                case (COMMOND.Load):
+                case (PageBoxCMD.Load):
                     playtimer.Enabled = false;
                     BringToFront();
                     using (OpenFileDialog dialog = new OpenFileDialog())
@@ -534,7 +449,7 @@ namespace CCS.Catcher.Controls
             Catcher.Internal.SwcodeFile._MSGBACK HasLoaded = Catcher.Internal.SwcodeFile._MSGBACK.Fail;
             if (Catcher.Utils.Basic.GetFileSuffix(path) == "bin") //非标准swc格式
             {
-                using (Catcher.Forms.SizeForm format = new Catcher.Forms.SizeForm())
+                using (Catcher.Forms.FormatForm format = new Catcher.Forms.FormatForm())
                 {
                     format.StartPosition = FormStartPosition.Manual;
                     format.Location = PointToScreen(new Point(Width / 2 - format.Width / 2, Height / 2 - format.Height / 2));
@@ -566,5 +481,92 @@ namespace CCS.Catcher.Controls
                 Catcher.Utils.Notify.Send(3, "文件格式错误或为空文件");
             }
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        private struct MapBox
+        {
+            public int Height;
+            public int Width;
+            public int X;
+            public int Y;
+            public int BorderWidth;
+            public Color BorderColor;
+            public Color BackColor;
+            public bool Selected;
+
+            public Rectangle Area()
+            {
+                return new Rectangle(X, Y, Width, Height);
+            }
+
+            public Rectangle Border()
+            {
+                return new Rectangle(X - BorderWidth, Y - BorderWidth, Width + 2 * BorderWidth, Height + 2 * BorderWidth);
+            }
+        };
+
+        private struct MovBar
+        {
+            public float Height;
+            public float Width;
+            public float X;
+            public float Y;
+            public string Text;
+            public float CurWidth;
+            public Color TextColor;
+            public Color BackColor1;
+            public Color BackColor2;
+            public bool Selected;
+
+            public Rectangle Border()
+            {
+                return new Rectangle((int)X - 1, (int)Y - 1, (int)Width + 2, (int)Height + 2);
+            }
+
+            public RectangleF CurArea()
+            {
+                return new RectangleF(X, Y, CurWidth, Height);
+            }
+
+            public RectangleF NotArea()
+            {
+                return new RectangleF(X + CurWidth, Y, Width - CurWidth, Height);
+            }
+
+            public float TextX(float txtw)
+            {
+                float _x = 0;
+                if (txtw < CurWidth)
+                {
+                    _x = X + CurWidth - txtw;
+                    TextColor = BackColor2;
+                }
+                else
+                {
+                    _x = X + CurWidth + 2;
+                    TextColor = BackColor1;
+                }
+                return _x;
+            }
+        };
+
+        private struct MouseMark
+        {
+            public Rectangle rect;
+            public Point logic;
+            public Color clr1;
+            public Color clr2;
+            public Color clr3;
+            public bool visual;
+            public bool mlock;
+            public Font font;
+
+            public string Text()
+            {
+                return string.Format("[{0}, {1}]", logic.X, logic.Y);
+            }
+        };
+
+        ////////////////////////////////////////////////////////////////////////////////////////
     }
 }

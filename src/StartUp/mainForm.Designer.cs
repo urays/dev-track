@@ -567,6 +567,7 @@ namespace IDevTrack.StartUp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainForm";
             this.Text = "mainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mainForm_KeyDown);
             this.ToolBar.ResumeLayout(false);

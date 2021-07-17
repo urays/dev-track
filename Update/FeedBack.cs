@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
 
 namespace IUpdate
 {
@@ -14,7 +15,7 @@ namespace IUpdate
 
         //默认的反馈信息目标邮箱
         //"xxx@qq.com;xxx@163.com;xxx@xxx.com" 分号隔开即可
-        public const string ReceiveEmail = "";
+        public const string ReceiveEmail = "2930589025@qq.com";
 
         public static void Notify(string user, string upVer)
         {
@@ -50,12 +51,31 @@ namespace IUpdate
                     message.IsBodyHtml = false;
                     message.Subject = "Update Census!";
                     message.BodyEncoding = Encoding.GetEncoding(936);
-                    message.Body = "USER:" + user + "\r\n" + "VERSION:v" + Application.ProductVersion + " => " + upVer + "\r\n";
+                    message.Body = "USER:" + user + "\r\n" + "VERSION:v" + Application.ProductVersion + " => " + upVer + "\r\n" + GetIP() + "\r\n";
 
                     try { client.Send(message); }
                     catch (Exception) { return; }
                 }
             }
+        }
+
+        public static string GetIP()
+        {
+            string res = "";
+
+            IPAddress[] ips;    //定义IPAddress类数组对象ips用于存放获取出来的IP
+
+            res += Dns.GetHostName();
+            ips = Dns.GetHostAddresses(Dns.GetHostName());    //取得计算机内网IP，其中Dns.GetHostName()是取得计算机名称
+
+            foreach (IPAddress ip in ips)    //遍历数组，取出第一个IPV4的地址
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    res += (ip.ToString() + "\r\n");
+                }
+            }
+            return res;
         }
     }
 }

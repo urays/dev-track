@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace CCS.Catcher.Forms
 {
-    public partial class SizeForm : System.Windows.Forms.Form
+    public partial class FormatForm : System.Windows.Forms.Form
     {
         public int FormatWidth { get; private set; } = Catcher.Internal.OPSwcode.DEFAULT_WIDTH;
 
@@ -14,7 +14,7 @@ namespace CCS.Catcher.Forms
 
         public string FileName { get => Text; set => Text = value; }
 
-        public SizeForm()
+        public FormatForm()
         {
             InitializeComponent();
         }

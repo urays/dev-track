@@ -11,9 +11,13 @@ git config --global core.autocrlf true
 
 **> 采用编码格式：SWCODE，同时也支持BIN。swocde源码地址:https://github.com/urays/swcode**
 
+**> 'test_videos'目录下的文件可以用作测试**
 
 **> 软件自动更新源:https://gitee.com/OTRACK/devtrack-release**
 
+### Interface Design (Beta)
+
+![ID1](https://i.loli.net/2021/07/17/lsFyd4qVeKkIYOt.jpg)
 
 ### TODO
 
@@ -43,3 +47,8 @@ git config --global core.autocrlf true
 ### 关于CCS
 
 **CCS**是**Custom Controls**的简称，它是一个面向DevTrack，为了方便扩展功能以及优化代码运行效率而创建的自定义控件库。目前仍处于初步开发阶段，尚未应用于DevTrack的发行版。<br><br>**CCS/docs**文件夹下是urays对于DevTrack功能设计提出的一些实现思路，由于时间和精力有限，很多想法尚未进行代码实现 :)
+
+### CCS (Ext)
+
+![CCS_1](https://i.loli.net/2021/07/17/KoQ9MgEDICUrn57.jpg)
+

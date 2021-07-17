@@ -63,9 +63,10 @@ namespace Update
 
         private void CallBack_UpdateFiles(IAsyncResult iar)
         {
-#if !DEBUG
+            //#if !DEBUG
             IUpdate.FeedBack.Notify(Environment.UserName, "v" + ToVersion);
-#endif
+            //#endif
+
             if (File.Exists("DevTrack.exe"))
             {
                 System.Diagnostics.Process.Start("DevTrack.exe");

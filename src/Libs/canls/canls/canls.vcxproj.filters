@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dev">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="smc_cam_rc">
+      <UniqueIdentifier>{5a5f0259-c4da-4b3a-a1a7-2fcf4e1c9ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\suprc">
+      <UniqueIdentifier>{b72eb198-79e4-448e-b84a-19f86ec4ff10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\suprc\src">
+      <UniqueIdentifier>{e5f9b292-abb9-4cb4-82c1-fbb9d4a49408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\suprc\inc">
+      <UniqueIdentifier>{a728f059-1717-4cd9-8056-e7af8bd3a4f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\status">
+      <UniqueIdentifier>{e5e867a5-2c49-46bd-b758-48d5b49e561a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\status\inc">
+      <UniqueIdentifier>{a29d120b-2113-466b-92be-e24dedeb33d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="smc_cam_rc\status\src">
+      <UniqueIdentifier>{b26f1543-a90f-437d-b1cf-d8cbe7d968b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\exin-anls.c">
+      <Filter>smc_cam_rc\status</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\anls_mid.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\core_fsm.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\sta_basic.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\sta_block.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\sta_cross.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\sta_island.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\status\src\sta_outer.c">
+      <Filter>smc_cam_rc\status\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\freeman.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_draw.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_exfunc.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_line.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_math.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_ring.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\smc-cam-rc\c-anls\suprc\src\sup_tlock.c">
+      <Filter>smc_cam_rc\suprc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dev\camera.c">
+      <Filter>dev</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dev\interface.c">
+      <Filter>dev</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\smc-cam-rc\c-anls\conf-anls.h">
+      <Filter>smc_cam_rc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\extro-anls.h">
+      <Filter>smc_cam_rc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\ex_mark.h">
+      <Filter>smc_cam_rc\status</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\anls_mid.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\core_fsm.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\sta_basic.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\sta_block.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\sta_cross.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\sta_island.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\status\inc\sta_outer.h">
+      <Filter>smc_cam_rc\status\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\common.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\freeman.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_draw.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_exfunc.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_line.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_math.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_ring.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\smc-cam-rc\c-anls\suprc\inc\sup_tlock.h">
+      <Filter>smc_cam_rc\suprc\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dev\camera.h">
+      <Filter>dev</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dev\interface.h">
+      <Filter>dev</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="canls.rc">
+      <Filter>dev</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

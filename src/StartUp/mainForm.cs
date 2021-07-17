@@ -345,6 +345,11 @@ namespace IDevTrack.StartUp
             aboutform.Dispose();
         }
 
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            IDevTrack.Update.FeedBack.Notify(Environment.UserName, "___");
+        }
+
         #endregion About
     }
 }
